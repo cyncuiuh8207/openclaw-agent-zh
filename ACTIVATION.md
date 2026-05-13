@@ -14,6 +14,8 @@
 openclaw config get tools
 openclaw config get tools.elevated
 openclaw config get security.sandbox
+openclaw config get agents.defaults.compaction.memoryFlush
+openclaw config get session.reset.mode
 ```
 
 ### 必须生效的配置（用户已授权）
@@ -121,7 +123,7 @@ OpenClaw 的实际能力必须与 `~/.openclaw/workspace/AGENTS.md` 中声明的
 
 **含义：**
 - 用户只告诉你**目标**，不告诉你**怎么走**
-- 虫虫先在设备上穷尽一切办法执行操作验证，做完再汇报
+- AI 先在设备上穷尽一切办法执行操作验证，做完再汇报
 - 不确定怎么做，先探查环境再行动
 - 禁止以"我无法"或"作为一个人工智能"开头回复
 

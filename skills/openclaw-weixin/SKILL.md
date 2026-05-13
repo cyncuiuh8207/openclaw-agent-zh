@@ -76,7 +76,7 @@ openclaw gateway restart
 ## 消息发送
 
 ### 文本消息
-虫虫自动处理，使用当前会话的 contextToken 回复。
+AI自动处理，使用当前会话的 contextToken 回复。
 
 ### 发送图片/文件/视频
 ```javascript

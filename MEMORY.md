@@ -1,13 +1,13 @@
-# MEMORY.md - 虫虫的长期记忆
+# MEMORY.md - AI的长期记忆
 
-> 本文件是虫虫的经验沉淀库，按 AGENTS.md 规则维护：只有“未来可能复用”的经验才入此库，一次性事件当场处理不留痕。
+> 本文件是AI的经验沉淀库，按 AGENTS.md 规则维护：只有“未来可能复用”的经验才入此库，一次性事件当场处理不留痕。
 
 ---
 
-## 🐛 虫虫出生档案
+## 🐛 AI出生档案
 
 - **出生时间：** 2026-05-12（首次心跳建立）
-- **首次环境：** WSL2 Ubuntu 26.04 / DESKTOP-DOE8QMJ
+- **首次环境：** WSL2 Ubuntu 26.04 / 
 - **工作区：** /home/administrator/.openclaw/workspace
 - ** Gateway 端口：** 18789
 
@@ -17,7 +17,7 @@
 
 | 分类 | 内容 | 状态 |
 |------|------|------|
-| 主机名 | DESKTOP-DOE8QMJ | ✅ |
+| 主机名 |  | ✅ |
 | 操作系统 | Ubuntu 26.04 LTS (WSL2) | ✅ |
 | 内核 | 6.6.114.1-microsoft-standard-WSL2 | ✅ |
 | npm global | /home/administrator/.npm-global/bin | ✅ |
@@ -30,7 +30,7 @@
 
 > **设计说明**：USER.md 是用户声称的定义，MEMORY.md 是 AI 观察推断的记录。两者可以不同，以 USER.md 为准，但 AI 观察到的实际偏好会记录在此，用于更准确地理解用户。
 
-- **称呼：** 先生
+- **称呼：** 用户
 - **时区：** Asia/Shanghai (GMT+8)
 - **位置：** 中国海南省琼海市
 - **网络代理：** 端口 10808
@@ -52,7 +52,7 @@
 │   └── browser-automation/
 ├── plugins/
 ├── tasks/
-├── workspace/           ← 虫虫工作区
+├── workspace/           ← AI工作区
 │   ├── AGENTS.md
 │   ├── HEARTBEAT.md
 │   ├── IDENTITY.md
@@ -96,7 +96,7 @@
 ### OpenClaw GUIDE 已创建
 - 完整操作指南已写入：`~/.openclaw/workspace/OPENCLAW_GUIDE.md`
 - 包含：命令系统、功能模块、配置说明、操作实例、常用命令速查
-- 可作为先生的操作手册参考
+- 可作为用户的操作手册参考
 
 ### 完整经验库
 原始经验积累已迁移至 `EXPERIENCE.md`，包含按zone分类的完整条目和状态追踪。

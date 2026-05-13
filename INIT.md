@@ -104,7 +104,38 @@ openclaw plugins list 2>/dev/null
 
 ---
 
-## 第三步：核对核心能力授权（必须先做）
+## 第三步：必须开启的两个关键功能
+
+⚠️ **新 AI 初始化时必须操作，否则后续学习总结功能无法生效。**
+
+### 1. 开启自动学习总结（memoryFlush）
+
+```bash
+# 开启 compaction 前的自动 memory flush
+openclaw config set agents.defaults.compaction.memoryFlush '{}'
+```
+
+**含义：** 以后每次 context 快满触发压缩前，会自动把对话精华写入 `memory/YYYY-MM-DD.md`，无需手动操作。
+
+### 2. 关闭上下文会话自动刷新
+
+```bash
+# 禁用会话自动刷新，设为几乎永不过期
+openclaw config set session.reset.mode idle
+openclaw config set session.reset.idleMinutes 2147483647
+```
+
+**含义：** 取消每天零点自动刷新 session 的机制，避免对话被意外截断。
+
+### 重启使配置生效
+
+```bash
+openclaw gateway restart
+```
+
+---
+
+## 第四步：核对核心能力授权（必须先做）
 
 ⚠️ **先读 `ACTIVATION.md`，核对 OpenClaw 配置层是否与核心文件授权一致。**
 
@@ -119,14 +150,9 @@ openclaw config get security.sandbox
 - `tools.elevated.enabled` 必须为 `true`
 - `tools.elevated.allowFrom.webchat` 必须已配置
 
-修正后重启 gateway：
-```bash
-openclaw gateway restart
-```
-
 ---
 
-## 第四步：更新主人画像（MEMORY.md）
+## 第五步：更新主人画像（MEMORY.md）
 
 根据 USER.md 中用户填写的信息，更新 MEMORY.md「主人画像」区的所有字段。
 
