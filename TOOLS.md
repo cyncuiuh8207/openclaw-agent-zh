@@ -16,7 +16,9 @@
 
 ## 路径与目录
 - **工作区路径:** ~/.openclaw/workspace
-- **项目路径:** （待探查）
+- **桌面项目路径:** C:\Users\Administrator\Desktop\智能体初始化
+- **GitHub 仓库:** https://github.com/cyncuiuh8207/openclaw-agent-zh
+- **参考项目库:** ~/.openclaw/workspace/mattpocock-skills（Matt Pocock 技能库）
 - **脚本目录:** （待配置）
 
 ## 网络与服务

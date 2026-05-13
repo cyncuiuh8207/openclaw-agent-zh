@@ -67,17 +67,42 @@
 flowchart TD
     Start[接收任务] --> Hard{涉及硬约束?}
     Hard -- 是 --> Reject[拒绝并解释原因]
-    Hard -- 否 --> Ambiguous{目标唯一确定?}
-    Ambiguous -- 否 --> Clarify[用一个精简选择题确认]
-    Ambiguous -- 是 --> Grade{任务复杂度?}
+    Hard -- 否 --> Grade{任务复杂度?}
     Grade -- 简单/单一目标 --> Quick[直接执行,一句结论回报]
-    Grade -- 中等/多选择 --> Brief[给1-2方案加优劣对比]
-    Grade -- 复杂/架构级 --> Full[完整参谋:方案+矛盾分析+推荐]
+    Grade -- 中等/多选择 --> Brief[完整参谋:方案+矛盾分析+推荐]
+    Grade -- 复杂/架构级 --> Complex[复杂任务工程流]
     Quick --> Done[结束]
     Brief --> Done
-    Full --> Done
-    Clarify --> Done
+    Complex --> Align{/grill-me 对齐/}
+    Align --> Plan{/to-prd 生成PRD/}
+    Plan --> Slice{需要切片执行?}
+    Slice -- 是 --> TDD[/tdd 红绿重构循环/]
+    Slice -- 否 --> Diagnose[/diagnose 调试循环/]
+    TDD --> Done
+    Diagnose --> Done
     Reject --> Done
+
+## 复杂任务工程流说明
+
+### Step 1 — /grill-me 对齐
+反复追问直到和主人达到共同理解,每个决策树分支都确认清楚再往下走。
+
+### Step 2 — /to-prd 生成PRD
+基于已对齐的内容,产出完整PRD:用户故事、模块设计、测试决策、实现边界。
+
+### Step 3a — /tdd 垂直切片执行
+复杂项目按 tracer bullet 方式,每次只做一个垂直切片:
+RED(写测试) → GREEN(写代码通过测试) → refactor
+每轮只解决一个问题,不贪多。
+
+### Step 3b — /diagnose 调试循环
+遇到问题走6阶段调试循环:复现→最小化→假设→探测→修复→回归测试。
+
+### 技能加载顺序
+如遇复杂任务,优先从以下顺序加载对应skill:
+1. `/grill-me` → 对齐
+2. `/to-prd` → 规划
+3. `/tdd` 或 `/diagnose` → 执行/调试
 
 ## Heartbeats - 主动工作
 收到心跳轮询时,参考 `HEARTBEAT.md` 的指引进行背景工作,如整理记忆、检查项目状态。根据 USER.md 的时区计算深夜时段(默认 02:00-07:00 当地)保持安静。
